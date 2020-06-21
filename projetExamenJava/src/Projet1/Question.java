@@ -7,20 +7,20 @@ import java.util.Arrays;
 
 import javax.swing.ImageIcon;
 
-public class Question2 implements Serializable {
+public class Question implements Serializable {
 	public int numero;
 	public String  ennonce = " "; 
 	public String[] choix ={"","","",""};
 	public char[] solBinaire= {'0','0','0','0'}; //1001 : les vrais choix sont choix[0] et choix[3] 
-	ImageIcon img;
+	byte[] imgBin=null;
 	String titreExamen="";
-	public Question2() {
+	public Question() {
 		super();  
 		this.numero=0;
 		this.ennonce="vide"; 
 	}
 
-	public Question2(int numero, String ennonce, String[] choix, char[] solBinaire) {
+	public Question(int numero, String ennonce, String[] choix, char[] solBinaire) {
 		super();
 		this.numero = numero;
 		this.ennonce = ennonce;
@@ -63,8 +63,10 @@ public class Question2 implements Serializable {
 	@Override
 	public String toString() {
 		return "Question [numero=" + numero + ", ennonce=" + ennonce + ", choix=" + Arrays.toString(choix)
-				+ ", solBinaire=" + Arrays.toString(solBinaire) + ", imgBin=" 
-				+ ", titreExamen=" + titreExamen + "]";
-	} 
+				+ ", solBinaire=" + Arrays.toString(solBinaire) +  ", titreExamen=" + titreExamen +", imgBin=" + Arrays.toString(imgBin)
+				+ "]";
+	}
+
+	
 		 
 }
